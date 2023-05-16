@@ -1,0 +1,152 @@
+h1,h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+.main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+.content {
+  flex: 8 800px;
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+  .editor {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 0 1rem 1rem;
+    overflow: hidden;
+  }
+}
+.generator  {
+  position: relative;
+  flex: 0 8.25rem;
+  .editor {
+    padding-bottom: 0;
+  }
+  button {
+    color: white;
+    background-color: black;
+    width: 5rem;
+    height: 1.5rem;
+  }
+}
+.expression {
+  header {
+    background-color: #70b0e0;
+  }
+  flex: 0 7.25rem;
+}
+section {
+  background: #f0f1f2;
+  color: #585e63;
+  flex: 1 1 0%;
+  min-height: 0;
+  transition: flex .2s ease-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  header {
+    color: #26292b;
+    background: #b7bcc0;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem 0 1rem;
+    flex: 0 2.5rem;
+    h1  {
+      flex: 1;
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0;
+      margin-block-start: 0.83em;
+      margin-block-end: 0.83em;
+    }
+  }
+}
+.matches {
+  .cm-editor {
+    color: #101112;
+    font-family: "Source Code Pro",monospace;
+    background: 0 0;
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+    .match {
+      background-color: rgb(186, 186, 248);
+    }
+  }
+}
+
+.Visualization {
+    padding: 0 1rem 0 1rem;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    svg {
+      //transform: scale(0.8);
+      /*margin-top: 20px;*/
+    }
+    svg > defs + rect {
+      fill: transparent;
+      stroke: transparent;
+    }
+    svg text[text-anchor="start"] {
+      visibility: hidden;
+    }
+    svg circle[fill="#52c41a"] {
+      fill: currentColor;
+      color: #335c63;
+    }
+    svg rect[fill="#d3adf7"] {
+      fill: currentColor;
+      color: orange;
+      stroke: #cdcfcf;
+    }
+    svg rect[fill="#bae7ff"] {
+      fill: currentColor;
+      color: #ffff57;
+      stroke: #cdcfcf;
+    }
+    svg text[font-size="16px"] {
+      font-size: 9px !important;
+    }
+    svg text[font-size="14px"] {
+      font-size: 10px !important;
+    }
+  
+    svg rect[fill="#7cb305"] {
+      fill: currentColor;
+      color: #fcf3d7;
+      stroke: #cdcfcf;
+    }
+    text {
+      font-family: Roboto-Mono, sans-serif !important;
+    }
+    svg path [stroke="#00474f"] {
+      stroke: red !important;
+    }
+    svg path {
+      stroke: #cdcfcf;
+    }
+    //svg path[fill="#391085"] {
+    //  fill: currentColor;
+    //  color: red;
+    //}
+    svg circle[fill="#597ef7"] {
+      fill: currentColor;
+      color: #ef3437;
+    }
+    svg rect[fill="#ffc0cb"] {
+      fill: currentColor;
+      color: red;
+    }
+  }
