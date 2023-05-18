@@ -3,7 +3,7 @@ import { createEffect, createSignal } from 'solid-js';
 import PCRE from 'pcre-to-regexp'
 import './Card.scss';
 import Card from './Card';
-import toast, { Toaster } from 'solid-toast';
+import toaster, { Toaster } from 'solid-toast';
 import { createEditor } from './Codemirror';
 import { EditorState } from '@codemirror/state';
 function RegulexController({
@@ -32,9 +32,8 @@ function RegulexController({
   const handleAnalyze = async (e: MouseEvent) => {
     e.preventDefault();
     const response = await postRequest()
-    toast('Succesfuly created regular expression.');
+    toaster('Succesfuly created regular expression.');
     setRegex(response.regexp);
-    console.log(response.regexp)
     const state = EditorState.create({
       ...editorView()?.state,
       doc: response.regexp,
@@ -46,7 +45,7 @@ function RegulexController({
     setExpresison(query);
     const response = await postRequest()
     setExpresison(response.regexp);
-    toast('Build from history.');
+    toaster('Build from history.');
   }
   createEffect(() => {
     try {
@@ -61,7 +60,6 @@ function RegulexController({
       let m;
       const tempMatches: RegExpExecArray[] = [];
       const string = matchString();
-      console.log(string,regex())
       while ((m = visualizeRegex.exec(string)) !== null) {
         if(m.index === visualizeRegex.lastIndex) {
           visualizeRegex.lastIndex++;
@@ -115,8 +113,6 @@ function RegulexController({
         title='Matches'
         header={<h2> {getMatchText(matches().length)}</h2>}
       >
-        <slot name='header'>
-        </slot>
         <article class="editor multiline" ref={editorMachRef} />
       </Card>
       <Card 
