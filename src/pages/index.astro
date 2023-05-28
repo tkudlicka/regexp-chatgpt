@@ -11,8 +11,7 @@ const addHistory = (item: string) => {
 <Layout title="RegExp AI generator 🤖">
 	<div class="w-container">
 		<div class="app">
-			<Sidebar history={history} />
-			<Content client:idle="solid-js" addHistoryCallback={addHistory}:>
+		<Content client:only="solid-js" addHistoryCallback={addHistory}/>
 		</div>
 	</div>
 </Layout>

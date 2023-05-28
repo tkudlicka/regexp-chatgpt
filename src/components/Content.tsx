@@ -3,14 +3,20 @@ import { createEffect, createSignal } from 'solid-js';
 import PCRE from 'pcre-to-regexp'
 import './Card.scss';
 import Card from './Card';
+import Sidebar from './Sidebar';
+import Visualizaiton from './Visualization';
 import toaster, { Toaster } from 'solid-toast';
 import { createEditor } from './Codemirror';
 import { EditorState } from '@codemirror/state';
-function RegulexController({
-  addHistoryCallback
-}: {
-  addHistoryCallback: (query: string) => void,
-}) {
+
+function PlayIcon() {
+    return (
+      <svg class='play-icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 494.148 494.148" fill="currentColor" xml:space="preserve"><path d="M405.284 201.188 130.804 13.28C118.128 4.596 105.356 0 94.74 0 74.216 0 61.52 16.472 61.52 44.044v406.124c0 27.54 12.68 43.98 33.156 43.98 10.632 0 23.2-4.6 35.904-13.308l274.608-187.904c17.66-12.104 27.44-28.392 27.44-45.884.004-17.48-9.664-33.764-27.344-45.864z"></path></svg>
+    );
+}
+
+
+function RegulexController() {
   let [regex, setRegex] = createSignal("/([A-Z])\w+/g");
   let [matches, setMatches] = createSignal([]);
   let [matchString, setMatchString] = createSignal('test');
@@ -94,13 +100,11 @@ function RegulexController({
   return (
     <div class='content'>
       <Card
-        title='Write me a reguler expression that match...'
+        title=''
         sectionClassName='generator'
-        header={<button onClick={(event) => handleAnalyze(event)}>Run</button>}
+        header={<button onClick={(event) => handleAnalyze(event)}><span class='generate--text'>Generate regular expression {PlayIcon()}</span></button>}
       >
-        <article class='editor multiline' ref={generatorRef}>
-          
-        </article>
+        <article class='editor multiline' ref={generatorRef} />
       </Card>
       <Card
         sectionClassName='expression'
@@ -115,11 +119,13 @@ function RegulexController({
       >
         <article class="editor multiline" ref={editorMachRef} />
       </Card>
-      <Card 
-        title='Visualization'
-        sectionClassName="visualization">
-        
+      <Card
+        sectionClassName='visualize'
+        title='Visualize'
+      >
+        <Visualizaiton regex={regex} />
       </Card>
+      <slot />
       <Toaster position="bottom-center"
         gutter={8} />
     </div>

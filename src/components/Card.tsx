@@ -45,7 +45,7 @@ const CardComponent: Component<SectionProps> = (props)  => {
   return (
     <section class={sectionClassName}>
       <header> 
-        <h1>{title}</h1> 
+        {title ? <h1 >{title}</h1> : null}
         {props?.header}
       </header>
       {slots.default}
