@@ -40,6 +40,7 @@ export const post: APIRoute = async ({ request }) => {
       query: string
     }>await request.json();
     const response = await makePrompt(json.query);
+
     return {
       body: JSON.stringify({
         regexp: response.choices[0].text.trim(),

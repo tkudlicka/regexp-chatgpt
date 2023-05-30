@@ -12,7 +12,6 @@ import {
   import { createCompartmentExtension as coreCreateCompartmentExtension } from './createCompartmentExtension';
   import {minimalSetup  } from "codemirror"
 
-  import {indentWithTab} from "@codemirror/commands"
   export interface CreateCodeMirrorProps {
     /**
      * The initial value of the editor
@@ -78,11 +77,6 @@ import {
             EditorState.readOnly.of(true),
           )
         }
-        if(props?.enableTabKey)  {
-          extensions.push(
-            keymap.of([indentWithTab]),
-          );
-        }
         if(props?.placholder) {
           extensions.push(
             placeholder(props?.placholder),
@@ -132,8 +126,9 @@ import {
             minimalSetup,
             EditorState.allowMultipleSelections.of(true),
             highlightWhitespace(),
-            tabSize.of(EditorState.tabSize.of(8)),
+            tabSize.of(EditorState.tabSize.of(4)),
             fixedHeightEditor,
+            EditorView.lineWrapping,
           ],
         });
       
@@ -151,15 +146,6 @@ import {
           },
         });
 
-        const highlight_decoration = Decoration.mark({
-          // attributes: {style: "background-color: red"}
-          class: 'red_back'
-        });
-        
-        
-        
-        
-  
         onMount(() => setEditorView(currentView));
   
         onCleanup(() => {

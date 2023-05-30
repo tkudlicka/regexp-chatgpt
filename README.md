@@ -1,43 +1,48 @@
-# Astro Starter Kit: Basics
+# RegExp generator
 
+This website, powered by ChatGPT, is specifically designed to generate regular expressions, which are powerful tools for pattern matching and text manipulation.
+
+## Table of Contents
+
+<!-- TOC -->
+* [RegExp generator](#regexp-generator)
+  * [Table of Contents](#table-of-contents)
+  * [Overview](#overview)
+  * [Requirements](#requirements)
+  * [Installation](#installation)
+  * [Author Information](#author-information)
+  * [Commands](#commands)
+<!-- TOC -->
+
+## Overview
+
+![RegExp generator]("RegExp generator: Website")
+
+## Requirements
+
+* Nodejs `16.x` or newer.
+* OpenAI API token
+
+## Installation
+Crete .env file in the root of your project:
 ```
-npm create astro@latest -- --template basics
+OPENAI_API_KEY=<yourtoken>
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
-
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
+And install dependencies
 ```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+npm install && npm dev
 ```
+## Author Information
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+This module is maintained by the contributors listed on [GitHub](https://github.com/tkudlicka/regexp-chatgpt/graphs/contributors).
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## TBD
+- [ ] Highlighting regexp input
+- [ ] Highlighting matches
+- [ ] Setup github actions
+- [ ] Dockerfile
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -49,7 +54,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
