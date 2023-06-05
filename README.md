@@ -8,6 +8,7 @@ This website, powered by ChatGPT, is specifically designed to generate regular e
 * [RegExp generator](#regexp-generator)
   * [Table of Contents](#table-of-contents)
   * [Overview](#overview)
+  * [Usage](#usage)
   * [Requirements](#requirements)
   * [Installation](#installation)
   * [Author Information](#author-information)
@@ -16,6 +17,13 @@ This website, powered by ChatGPT, is specifically designed to generate regular e
 ## Overview
 
 ![RegExp generator](preview.png "RegExp generator: Website")
+
+## Usage
+```
+docker run -e OPENAI_API_KEY='<yourtoken>' -i -t --platform linux/amd64 -p 3000:3000 tkudlicka/regexp-chatgpt
+```
+After access website on http://localhost:3000/
+
 
 ## Requirements
 
