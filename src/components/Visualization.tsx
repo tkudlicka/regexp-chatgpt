@@ -2,7 +2,7 @@ import 'solid-js';
 import { Accessor, createEffect, createSignal } from 'solid-js';
 import PCRE from 'pcre-to-regexp'
 import regulex from '@tkudlicka/regulex'
-import './Card.scss';
+import './Content.scss';
 function RegulexController({
   regex
 }:  { 

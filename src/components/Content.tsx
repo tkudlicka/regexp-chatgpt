@@ -4,7 +4,7 @@ import 'solid-js';
 import { createEffect, createSignal } from 'solid-js';
 import toaster, { Toaster } from 'solid-toast';
 import Card from './Card';
-import './Card.scss';
+import './Content.scss';
 import { createEditor } from './codemirror/Codemirror';
 import Visualizaiton from './Visualization';
 
